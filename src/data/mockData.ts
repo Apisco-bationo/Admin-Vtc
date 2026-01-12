@@ -2,6 +2,18 @@
 // Note: All monetary values (revenus, montants) are in Franc CFA (XOF)
 // Format example: 1,250,000 FC = 1,250,000 XOF
 
+export interface Permis {
+  numero: string;
+  dateExpiration: string;
+  categories: string;
+}
+
+export interface PieceIdentite {
+  type: 'cni' | 'passeport' | 'autre';
+  numero: string;
+  dateExpiration: string;
+}
+
 export interface Chauffeur {
   id: string;
   nom: string;
@@ -13,6 +25,8 @@ export interface Chauffeur {
   dateInscription: string;
   courses: number;
   revenus: number;
+  permis: Permis;
+  pieceIdentite: PieceIdentite;
 }
 
 export interface Vehicule {
@@ -66,6 +80,16 @@ export const chauffeurs: Chauffeur[] = [
     dateInscription: '2023-03-15',
     courses: 1247,
     revenus: 4568000,
+    permis: {
+      numero: 'PERM-2023-001',
+      dateExpiration: '2028-03-15',
+      categories: 'A, B, C',
+    },
+    pieceIdentite: {
+      type: 'cni',
+      numero: 'CI123456789',
+      dateExpiration: '2030-01-01',
+    },
   },
   {
     id: 'CHF002',
@@ -78,6 +102,16 @@ export const chauffeurs: Chauffeur[] = [
     dateInscription: '2023-05-20',
     courses: 892,
     revenus: 3245000,
+    permis: {
+      numero: 'PERM-2023-002',
+      dateExpiration: '2027-05-20',
+      categories: 'A, B',
+    },
+    pieceIdentite: {
+      type: 'passeport',
+      numero: 'PA987654321',
+      dateExpiration: '2028-06-15',
+    },
   },
   {
     id: 'CHF003',
@@ -90,6 +124,16 @@ export const chauffeurs: Chauffeur[] = [
     dateInscription: '2023-07-10',
     courses: 456,
     revenus: 1678000,
+    permis: {
+      numero: 'PERM-2023-003',
+      dateExpiration: '2026-07-10',
+      categories: 'A, B, D',
+    },
+    pieceIdentite: {
+      type: 'cni',
+      numero: 'CI987654321',
+      dateExpiration: '2029-12-31',
+    },
   },
   {
     id: 'CHF004',
@@ -102,6 +146,16 @@ export const chauffeurs: Chauffeur[] = [
     dateInscription: '2023-09-01',
     courses: 678,
     revenus: 2456000,
+    permis: {
+      numero: 'PERM-2023-004',
+      dateExpiration: '2029-09-01',
+      categories: 'A, B, C, D, E',
+    },
+    pieceIdentite: {
+      type: 'cni',
+      numero: 'CI456789123',
+      dateExpiration: '2031-03-20',
+    },
   },
   {
     id: 'CHF005',
@@ -114,6 +168,16 @@ export const chauffeurs: Chauffeur[] = [
     dateInscription: '2023-04-25',
     courses: 234,
     revenus: 890000,
+    permis: {
+      numero: 'PERM-2023-005',
+      dateExpiration: '2025-04-25',
+      categories: 'A, B',
+    },
+    pieceIdentite: {
+      type: 'cni',
+      numero: 'CI789123456',
+      dateExpiration: '2028-08-10',
+    },
   },
 ];
 

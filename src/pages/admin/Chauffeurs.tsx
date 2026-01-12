@@ -5,8 +5,10 @@ import { DataTable } from "@/components/admin/DataTable";
 import { chauffeurs, vehicules } from "@/data/mockData";
 import { Plus, Eye, Edit, Mail, Phone } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Chauffeurs = () => {
+  const navigate = useNavigate();
   const [selectedChauffeur, setSelectedChauffeur] = useState<string | null>(null);
 
   const getVehiculeInfo = (vehiculeId: string | null) => {
@@ -135,6 +137,7 @@ const Chauffeurs = () => {
             label="Ajouter un chauffeur"
             icon={Plus}
             variant="primary"
+            onClick={() => navigate("/admin/chauffeurs/ajouter")}
           />
         </div>
 

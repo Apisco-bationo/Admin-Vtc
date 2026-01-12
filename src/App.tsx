@@ -13,6 +13,7 @@ import RapportsVehicules from "@/pages/admin/RapportsVehicules";
 import Statistiques from "@/pages/admin/Statistiques";
 import RendementChauffeurs from "@/pages/admin/RendementChauffeurs";
 import AjouterVehicule from "@/pages/admin/AjouterVehicule";
+import AjouterChauffeur from "@/pages/admin/AjouterChauffeur";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="chauffeurs" element={<Chauffeurs />} />
 <Route path="vehicules" element={<Vehicules />} />
             <Route path="vehicules/ajouter" element={<AjouterVehicule />} />
+            <Route path="chauffeurs/ajouter" element={<AjouterChauffeur />} />
             <Route path="versements" element={<Versements />} />
             <Route path="rendement-chauffeurs" element={<RendementChauffeurs />} />
             <Route path="rapports" element={<RapportsVehicules />} />
